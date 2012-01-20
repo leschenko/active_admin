@@ -131,22 +131,12 @@ HTML
     item.parent.should == list
   end
 
-
-  ["Hello World", 1, 1.5].each do |value|
-    it "should append the return value of '#{value}' when no other children added to the DOM" do
-      li do
-        value
-      end.to_s.should == "<li>#{value}</li>\n"
-    end
-  end
-
-  ["Hello World", 1, 1.5].each do |value|
-    it "should not append the return value of '#{value}' when children have been added to the DOM" do
-      li do
-        text_node("Already Added")
-        value
-      end.to_s.should == "<li>Already Added</li>\n"
-    end
+  it "should set a string content return value with no children" do
+    li do
+      "Hello World"
+    end.to_s.should == <<-HTML
+<li>Hello World</li>
+HTML
   end
 
   describe "text nodes" do
