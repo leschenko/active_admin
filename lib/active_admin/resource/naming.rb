@@ -1,15 +1,14 @@
 module ActiveAdmin
   class Resource
     module Naming
-		
-	  def name_of_resource_class
-        tmp_resource_name ||= @options[:as]
-        tmp_resource_name ||= resource_class.name.gsub('::','')
-	  end
 
-  	  def plural_name_of_resource_class
+      def name_of_resource_class
+        @options[:as] || resource_class.name.gsub('::', '')
+      end
+
+      def plural_name_of_resource_class
         name_of_resource_class.pluralize
-	  end
+      end
 
       # Returns the name to call this resource such as "Bank Account"
       def resource_name
@@ -62,7 +61,8 @@ module ActiveAdmin
         return nil unless resource_class.respond_to?(:model_name)
 
         begin
-          I18n.translate!("activerecord.models.#{resource_class.model_name.underscore}.other").titleize
+          resource_class.model_name.human
+          #I18n.translate!("activerecord.models.#{resource_class.model_name.underscore}.other").titleize
         rescue I18n::MissingTranslationData
           nil
         end
