@@ -41,7 +41,7 @@ module ActiveAdmin
         options.each do |key, value|
           svg.gsub!("{#{key}}", value)
         end
-        "<span class=\"icon icon_#{name}\">#{svg}</span>".html_safe
+        "<div class=\"icon icon_#{name}\">#{svg}</div>".html_safe
       else
         raise "Could not find the icon named #{name}"
       end
