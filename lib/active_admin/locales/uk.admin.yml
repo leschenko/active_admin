@@ -1,0 +1,40 @@
+uk:
+  active_admin: 
+    any: "Будь-який"
+    blank_slate: 
+      content: "Ще немає %{resource_name}."
+      link: "Створити"
+    cancel: "Відміна"
+    clear_filters: "Очистити"
+    dashboard: Dashboard
+    dashboard_welcome: 
+      call_to_action: "Щоб додади сюди що-небудь загляньте 'app/admin/dashboards.rb'"
+      welcome: "Ласкаво просимо до Active Admin. Це стандартна сторінка управління сайтом."
+    delete: "Видалити"
+    delete_confirmation: "Ви впевнені, що хочете видалити це?"
+    delete_model: "Видалити"
+    details: "Детальніше"
+    download: "Завантаження:"
+    edit: "Змінити"
+    edit_model: "Змінити"
+    empty: "Пусто"
+    equal_to: "="
+    filter: "Фільтрувати"
+    greater_than: ">"
+    has_many_delete: "Видалити"
+    has_many_new: "Додати %{model}"
+    less_than: <
+    logout: "Вийти"
+    main_content: "Створіть %{model} для відображення вмісту."
+    new_model: "Створити"
+    next: "Наст."
+    pagination: 
+      empty: "%{model} не знайдено"
+      multiple: "Результат: %{model} <b> %{from} - %{to} </b> з <b> %{total} </b>"
+      one: "Результат: <b> 1 </b> %{model}"
+      one_page: "Результат: <b> %{n} </ b> %{model}"
+    previous: "Попер."
+    search_field: "Шукати по %{field}"
+    sidebars: 
+      filters: "Фільтри"
+    view: "Відкрити"
