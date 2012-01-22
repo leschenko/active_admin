@@ -110,9 +110,13 @@ module ActiveAdmin
           else;   I18n.t('active_admin.pagination.one_page', :model => entries_name, :n => collection.total_count)
           end
         else
-          offset = collection.current_page * collection.size
+          if collection.last_page?
+            offset = collection.total_count - collection.size
+          else
+            offset = (collection.current_page - 1) * collection.size
+          end
           total  = collection.total_count
-          I18n.t('active_admin.pagination.multiple', :model => entries_name, :from => (offset - collection.size + 1), :to => offset > total ? total : offset, :total => total)
+          I18n.t('active_admin.pagination.multiple', :model => entries_name, :from => (offset + 1), :to => (offset + collection.size), :total => total)
         end
       end
 
