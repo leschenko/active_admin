@@ -6,7 +6,7 @@ module ActiveAdmin
     class HeaderRenderer < ::ActiveAdmin::Renderer
 
       def to_html
-        title + global_navigation + utility_navigation
+        title + global_navigation + utility_navigation + lang_bar
       end
 
       protected
@@ -54,6 +54,21 @@ module ActiveAdmin
             if active_admin_namespace.logout_link_path
               html << link_to(I18n.t('active_admin.logout'), active_admin_logout_path, :method => logout_method)
             end
+          end
+        end
+      end
+
+      def lang_bar
+        locales = I18n.available_locales
+        return '' if locales.size < 2
+
+        content_tag 'div', :id => "lang_block", :class => 'header-item' do
+          content_tag 'ul', :id => "language", :class => 'header-item' do
+            locales.map do |locale|
+              content_tag 'li', :class => "lang #{'current' if locale == I18n.locale}" do
+                link_to image_tag("/images/flags/#{locale}.png"), url_for(:locale => locale)
+              end
+            end.join.html_safe
           end
         end
       end
