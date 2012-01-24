@@ -3,16 +3,18 @@ module ActiveAdmin
     module Naming
       # Returns the user facing name. Example: "Bank Account"
       def resource_name
-        @resource_name ||= @options[:as]
-        @resource_name ||= singular_human_name
-        @resource_name ||= safe_resource_name
+        #@resource_name ||= @options[:as]
+        #@resource_name ||= singular_human_name
+        #@resource_name ||= safe_resource_name
+        @options[:as] || resource_class.model_name.human
       end
 
       # Returns the plural version of the user facing name. Example: "Bank Accounts"
       def plural_resource_name
-        @plural_resource_name ||= @options[:as].pluralize if @options[:as]
-        @plural_resource_name ||= plural_human_name
-        @plural_resource_name ||= resource_name.pluralize
+        #@plural_resource_name ||= @options[:as].pluralize if @options[:as]
+        #@plural_resource_name ||= plural_human_name
+        #@plural_resource_name ||= resource_name.pluralize
+        @options[:as] || resource_class.model_name.human
       end
 
       # A name used internally to uniquely identify this resource
