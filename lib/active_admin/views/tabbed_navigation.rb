@@ -45,10 +45,10 @@ module ActiveAdmin
 
           if item.children.any?
             li_element.add_class "has_nested"
-            text_node link_to(item.name, item.url || "#")
+            text_node link_to(item.human_name, item.url || "#")
             render_nested_menu(item)
           else
-            link_to item.name, item.url
+            link_to item.human_name, item.url
           end
         end
       end

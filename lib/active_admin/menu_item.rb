@@ -23,6 +23,12 @@ module ActiveAdmin
       yield(self) if block_given? # Builder style syntax
     end
 
+    def human_name
+      I18n.translate!(@name, :scope => [:admin, :menu])
+    rescue I18n::MissingTranslationData
+      @name.pluralize.titleize
+    end
+
     def add(name, url, priority=10, options = {}, &block)
       item = MenuItem.new(name, url, priority, options, &block)
       item.parent = self
