@@ -38,7 +38,7 @@ module ActiveAdmin
               resources config.underscored_resource_name.pluralize do
                 # Define any member actions
                 member do
-                  config.member_actions.each do |action|
+                  config.member_actions.reject{|a| a.name == :show }.each do |action|
                     # eg: get :comment
                     send(action.http_verb, action.name)
                   end
