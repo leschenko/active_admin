@@ -6,9 +6,10 @@ module ActiveAdmin
 
       def build(title, attributes = {})
         icon_name = attributes.delete(:icon)
+        panel_class = attributes.delete(:panel_class)
         icn = icon_name ? icon(icon_name) : ""
         super(attributes)
-        add_class "panel #{attributes.delete(:panel_class)}"
+        add_class "panel #{panel_class}"
         @title = h3(icn + title.to_s)
         @contents = div(:class => "panel_contents")
       end

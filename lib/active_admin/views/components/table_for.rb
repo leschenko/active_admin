@@ -174,6 +174,9 @@ module ActiveAdmin
         private
 
         def pretty_title(raw)
+          raw = raw.to_s.gsub(/_bool$/, '').gsub(/_title$/, '').gsub(/_no_html$/, '')
+          raw = raw.to_sym unless raw.length.zero?
+
           if raw.is_a?(Symbol)
             if @options[:i18n] && @options[:i18n].respond_to?(:human_attribute_name) && human_name = @options[:i18n].human_attribute_name(raw)
               raw = human_name

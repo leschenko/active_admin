@@ -34,7 +34,8 @@ module ActiveAdmin
         'attributes_table'
       end
 
-      def header_content_for(attr)
+      def header_content_for(raw_attr)
+        attr = raw_attr.to_s.gsub(/_bool$/, '').gsub(/_title$/, '').gsub(/_no_html$/, '')
         @record.class.respond_to?(:human_attribute_name) ? @record.class.human_attribute_name(attr).titleize : attr.to_s.titleize
       end
 
