@@ -243,15 +243,19 @@ module ActiveAdmin
     # to remove our paths from the ActiveSupport autoload paths.
     # If not, file naming becomes very important and can cause clashes.
     def remove_active_admin_load_paths_from_rails_autoload_and_eager_load
-      #ActiveSupport::Dependencies.autoload_paths.reject!{|path| load_paths.include?(path) }
-      ## Don't eagerload our configs, we'll deal with them ourselves
-      #Rails.application.config.eager_load_paths = Rails.application.config.eager_load_paths.reject do |path|
-      #  load_paths.include?(path)
-      #end
+      unless Rails.env.development?
+        ActiveSupport::Dependencies.autoload_paths.reject! { |path| load_paths.include?(path) }
+        # Don't eagerload our configs, we'll deal with them ourselves
+        Rails.application.config.eager_load_paths = Rails.application.config.eager_load_paths.reject do |path|
+          load_paths.include?(path)
+        end
+      end
     end
 
     def attach_reloader
-      #ActiveAdmin::Reloader.new(Rails.application, self, Rails.version).attach!
+      unless Rails.env.development?
+        ActiveAdmin::Reloader.new(Rails.application, self, Rails.version).attach!
+      end
     end
 
 
