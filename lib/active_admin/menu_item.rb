@@ -54,7 +54,7 @@ module ActiveAdmin
       else
         generated = @url
       end
-      @cached_url[@url] ||= generated
+      @cached_url["#{@url}_#{I18n.locale}"] ||= generated
     end
 
     # Returns an array of the ancestory of this menu item
