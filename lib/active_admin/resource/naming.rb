@@ -50,7 +50,6 @@ module ActiveAdmin
         plural_camelized_resource_name.underscore
       end
 
-
       private
 
       # @return [String] Titleized human name via ActiveRecord I18n or nil
