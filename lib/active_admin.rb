@@ -44,6 +44,7 @@ module ActiveAdmin
   autoload :Renderer,                 'active_admin/renderer'
   autoload :Scope,                    'active_admin/scope'
   autoload :ScopeChain,               'active_admin/helpers/scope_chain'
+  autoload :Settings,                 'active_admin/helpers/settings'
   autoload :SidebarSection,           'active_admin/sidebar_section'
   autoload :TableBuilder,             'active_admin/table_builder'
   autoload :ViewFactory,              'active_admin/view_factory'
