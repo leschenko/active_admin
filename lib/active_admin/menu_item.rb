@@ -47,6 +47,7 @@ module ActiveAdmin
       name.downcase.gsub( " ", '_' ).gsub( /[^a-z0-9_]/, '' )
     end
 
+    # new version support scoped routes
     def url
       case @url
       when Symbol
