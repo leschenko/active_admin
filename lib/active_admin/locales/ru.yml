@@ -19,7 +19,7 @@ ru:
     download: "Загрузка:"
     has_many_new: "Добавить %{model}"
     has_many_delete: "Удалить"
-    filter: "Фильтровать"
+    filter: "Уточнить"
     clear_filters: "Очистить"
     search_field: "Искать по %{field}"
     equal_to: "="
