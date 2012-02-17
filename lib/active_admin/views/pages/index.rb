@@ -17,7 +17,8 @@ module ActiveAdmin
         def main_content
           build_scopes
 
-          if items_in_collection?
+          if collection.any?
+          #if items_in_collection?
             render_index
           else
             if params[:q]
