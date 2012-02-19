@@ -104,6 +104,17 @@ module Arbre
           current_dom_context << Arbre::HTML::TextNode.from_string(tag)
         end
       end
+      
+      def appendable_return_block?(tag)
+        appendable = !tag.is_a?(Arbre::HTML::Element) && tag.respond_to?(:to_s) 
+        
+        # Ruby 1.9 returns empty array as "[]"
+        if tag.respond_to?(:empty?) && tag.empty? 
+          appendable = false
+        end
+        
+        appendable
+      end
     end
 
   end

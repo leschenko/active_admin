@@ -1,27 +1,48 @@
 ## Master (unreleased)
 
+## 0.4.1
+
 ### Enhancements
 
-* #865: Pages support the `#page_action` to add custom controller actions
-        to a page (@BoboFraggins)
+* [#865][]: Pages support the `#page_action` to add custom controller actions
+        to a page ([@BoboFraggins][])
 * Columns component now supports column spans, max and min widths ([@gregbell][])
-* #497: Custom pagination settings per resource (@pcreux)
-* #993: Login form now focuses on email (@mattvague)
-* #865: Add `:if` support to sidebar sections (@BoboFraggins)
-* #865: Added `:scope_count => false` to the index to hide scope counts
-        in generated scopes (@BoboFraggins)
+* [#497][]: Custom pagination settings per resource ([@pcreux][])
+* [#993][]: Login form now focuses on email ([@mattvague][])
+* [#865][]: Add `:if` support to sidebar sections ([@BoboFraggins][])
+* [#865][]: Added `:scope_count => false` to the index to hide scope counts
+        in generated scopes ([@BoboFraggins][])
 
 ### Bug Fixes
 
-* #101: Global nav now works with RackBaseURI ([@gregbell][])
-* #960: Global nav works when scoped in rails routes ([@gregbell][])
-* #994: Fix index page check collection.limit(1).exists? causes exception when
-        ordering by virtual colum (@latortuga, @gregbell)
-* #971: Fix SQL when sorting tables with a column named "group" (@ggilder)
+* [#101][]: Global nav now works with RackBaseURI ([@gregbell][])
+* [#960][]: Global nav works when scoped in rails routes ([@gregbell][])
+* [#994][]: Fix index page check collection.limit(1).exists? causes exception when
+        ordering by virtual colum ([@latortuga][], [@gregbell][])
+* [#971][]: Fix SQL when sorting tables with a column named "group" ([@ggilder][])
 
 ### Dependencies
 
-* #978: Support for Inherited Resources 1.3.0 (@fabiormoura)
+* [#978][]: Support for Inherited Resources 1.3.0 ([@fabiormoura][])
+
+### Contributors
+
+75 Commits by 12 authors
+
+* Bruno Bonamin
+* David Radcliffe
+* Dinesh Majrekar
+* Erik Michaels-Ober
+* Fábio Maia
+* Gabriel Gilder
+* Greg Bell
+* Kyle Macey
+* Matt Vague
+* Oldani Pablo
+* Peter Fry
+* Philippe Creux
+* Søren Houen
+
 
 ## 0.4.0
 
@@ -91,7 +112,7 @@ since we've changed both the CSS and JS files.
 * [#869][]: Upgraded Kaminari to >= 0.13.0 and added support for
   `Kaminari.config.page_method_name`. Active Admin should now be happy if
   `will_paginate` is installed with it. ([@j][]-manu)
-* #931: Support for Rails 3.2 added (@mperham)
+* [#931][]: Support for Rails 3.2 added ([@mperham][])
 
 ### Contributors
 
@@ -413,6 +434,7 @@ of the highlights. 250 commits. Enough said.
 [#96]: https://github.com/gregbell/active_admin/issues/96
 [#99]: https://github.com/gregbell/active_admin/issues/99
 [#100]: https://github.com/gregbell/active_admin/issues/100
+[#101]: https://github.com/gregbell/active_admin/issues/101
 [#110]: https://github.com/gregbell/active_admin/issues/110
 [#122]: https://github.com/gregbell/active_admin/issues/122
 [#131]: https://github.com/gregbell/active_admin/issues/131
@@ -432,6 +454,7 @@ of the highlights. 250 commits. Enough said.
 [#468]: https://github.com/gregbell/active_admin/issues/468
 [#470]: https://github.com/gregbell/active_admin/issues/470
 [#496]: https://github.com/gregbell/active_admin/issues/496
+[#497]: https://github.com/gregbell/active_admin/issues/497
 [#505]: https://github.com/gregbell/active_admin/issues/505
 [#527]: https://github.com/gregbell/active_admin/issues/527
 [#551]: https://github.com/gregbell/active_admin/issues/551
@@ -451,8 +474,16 @@ of the highlights. 250 commits. Enough said.
 [#751]: https://github.com/gregbell/active_admin/issues/751
 [#758]: https://github.com/gregbell/active_admin/issues/758
 [#780]: https://github.com/gregbell/active_admin/issues/780
+[#865]: https://github.com/gregbell/active_admin/issues/865
 [#869]: https://github.com/gregbell/active_admin/issues/869
 [#897]: https://github.com/gregbell/active_admin/issues/897
+[#931]: https://github.com/gregbell/active_admin/issues/931
+[#960]: https://github.com/gregbell/active_admin/issues/960
+[#971]: https://github.com/gregbell/active_admin/issues/971
+[#978]: https://github.com/gregbell/active_admin/issues/978
+[#993]: https://github.com/gregbell/active_admin/issues/993
+[#994]: https://github.com/gregbell/active_admin/issues/994
+[@BoboFraggins]: https://github.com/BoboFraggins
 [@DMajrekar]: https://github.com/DMajrekar
 [@ZequeZ]: https://github.com/ZequeZ
 [@bobbytables]: https://github.com/bobbytables
@@ -462,15 +493,19 @@ of the highlights. 250 commits. Enough said.
 [@ebeigarts]: https://github.com/ebeigarts
 [@emzeq]: https://github.com/emzeq
 [@fabiokr]: https://github.com/fabiokr
+[@fabiormoura]: https://github.com/fabiormoura
 [@fbuenemann]: https://github.com/fbuenemann
 [@george]: https://github.com/george
+[@ggilder]: https://github.com/ggilder
 [@gregbell]: https://github.com/gregbell
 [@j]: https://github.com/j
 [@jbarket]: https://github.com/jbarket
 [@knoopx]: https://github.com/knoopx
 [@krug]: https://github.com/krug
+[@latortuga]: https://github.com/latortuga
 [@macfanatic]: https://github.com/macfanatic
 [@mattvague]: https://github.com/mattvague
+[@mperham]: https://github.com/mperham
 [@mwindwer]: https://github.com/mwindwer
 [@page_title]: https://github.com/page_title
 [@pcreux]: https://github.com/pcreux
