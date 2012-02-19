@@ -58,10 +58,10 @@ ActiveAdmin::Event.subscribe ActiveAdmin::Application::LoadEvent do |app|
         controller do
           def create
             create! do |success, failure|
-              failure.html do 
-                resource_config = active_admin_config.namespace.resource_for(@comment.resource.class)
+              success.html { redirect_to :back }
+              failure.html do
                 flash[:error] = "Comment wasn't saved, text was empty."
-                redirect_to send(resource_config.route_instance_path, @comment.resource)
+                redirect_to :back
               end
             end
           end
