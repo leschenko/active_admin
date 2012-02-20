@@ -25,7 +25,7 @@ module ActiveAdmin
         when Arbre::HTML::Element
           object
         when Date, Time
-          localize(object, :format => :long)
+          localize(object, :format => :short)
         when ActiveRecord::Base
           auto_link(object)
         else

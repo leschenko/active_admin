@@ -53,8 +53,8 @@ module ActiveAdmin
 
         def build_title_bar
           div :id => "title_bar" do
-            build_titlebar_left
             build_titlebar_right
+            build_titlebar_left
           end
         end
         
